@@ -11,8 +11,8 @@
       <img :src="logo" alt="logo">
 
       <div class="input">
-        <input :placeholder="placeholder"></input>
-        <button>AGGIUNGI</button>
+        <input :placeholder="placeholder" v-model="nuovoElemento" v-on:keyup.enter="aggiungiElemento"></input>
+        <button @click="aggiungiElemento">AGGIUNGI</button>
       </div>
       <div class="box">
         <ul>
