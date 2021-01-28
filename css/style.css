@@ -35,6 +35,17 @@ button{
 }
 li{
   margin: 20px 20px 10px 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgb(231, 234, 236);
   list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+li > span{
+  display: none;
+  font-weight: bold;
+}
+li:hover span{
+  display: block;
+  cursor: pointer;
 }

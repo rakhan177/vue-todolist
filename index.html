@@ -4,25 +4,32 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
   </head>
   <body>
+    <!-- inizio app -->
     <div id="root" class="container">
-
-      <img :src="logo" alt="logo">
-
+      <!-- con v-bind lego oggetto data logo(valore) agli attributi  -->
+      <img :src="logo.src" :alt="logo.alt" >
       <div class="input">
+        <!-- con v-model aggancio nuovoElemento al valore di input, con v-bind lego
+        placeholder e v-on:keyup.enter richiama la finzione aggiungiElemento all' enter sull' input.-->
         <input :placeholder="placeholder" v-model="nuovoElemento" v-on:keyup.enter="aggiungiElemento"></input>
+        <!-- al click parte la funzione -->
         <button @click="aggiungiElemento">AGGIUNGI</button>
       </div>
       <div class="box">
         <ul>
-          <li v-for="(elem, index) in lista">{{elem}}</li>
+          <!-- genero con v-for <li> pari agli elementi contenuti in lista e li stampo
+          al loro interno con interpolazione elem.
+          Al click sulla x parte la funzione eliminaElemento alla quale passo parametro index dei li -->
+          <li v-for="(elem, index) in lista">{{elem}}<span @click=eliminaElemento(index)><i class="fas fa-times"></i></span></li>
         </ul>
       </div>
-
-
     </div>
-
+    <!-- / fine app -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="js/script.js" charset="utf-8"></script>
   </body>
