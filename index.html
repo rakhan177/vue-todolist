@@ -2,13 +2,23 @@
 <html lang="it" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>vue-todolist</title>
+    <title></title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div id="root" class="container">
 
-      <div>{{nome}}</div>
+      <img :src="logo" alt="logo">
+
+      <div class="input">
+        <input :placeholder="placeholder"></input>
+        <button>AGGIUNGI</button>
+      </div>
+      <div class="box">
+        <ul>
+          <li v-for="(elem, index) in lista">{{elem}}</li>
+        </ul>
+      </div>
 
 
     </div>
